@@ -3,12 +3,16 @@ services:
     name: tea-business-manager
     runtime: node
     plan: free
-    region: frankfurt # Low latency to Kenya, or oregon / ohio
+    region: frankfurt
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
         value: 20.17.0
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=450
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
       - key: NEXT_PUBLIC_SUPABASE_URL
         sync: false
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
