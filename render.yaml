@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: chai-tea-business-manager
+    name: tea-business-manager
     runtime: node
     plan: free
     region: frankfurt # Low latency to Kenya, or oregon / ohio
